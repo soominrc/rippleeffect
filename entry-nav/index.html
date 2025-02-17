@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Ripple</title>
+    <style>
+        @font-face {
+            font-family: 'Desktop';
+            src: url('fonts/desktop-font.woff2') format('woff2'),
+                 url('fonts/desktop-font.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Aston Script Bold';
+            src: url('fonts/aston-script-bold.woff2') format('woff2'),
+                 url('fonts/aston-script-bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pixelify Sans';
+            src: url('fonts/pixelify-sans.woff2') format('woff2'),
+                 url('fonts/pixelify-sans.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --background-color: #ffffff;
+            --accent-color: #0000ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+        }
+
+        .choose-ripple-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .choose-ripple-title {
+            font-size: 3rem;
+            text-indent: -10px;
+            margin-bottom: 4rem;
+            text-align: left;
+        }
+
+        .ripple-options {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .ripple-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .ripple-option:hover,
+        .ripple-option:focus-within {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .ripple-number {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: normal;
+            min-width: 3rem;
+        }
+
+        .ripple-text {
+            font-size: 1.5rem;
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .script-font {
+            font-family: 'Aston Script Bold', cursive;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-color);
+        }
+
+        .effect-layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            opacity: 0.1;
+            filter: blur(8px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .choose-ripple-title {
+                font-size: 2rem;
+            }
+
+            .ripple-number {
+                font-size: 1.5rem;
+            }
+
+            .ripple-text {
+                font-size: 1.2rem;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .effect-layer {
+                font-size: 6rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ripple-option {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="choose-ripple-container">
+        <h1 class="choose-ripple-title" id="main-heading">
+            CHOOSE YOUR RI<span aria-hidden="true">(())</span>PLE
+        </h1>
+        <section class="ripple-options" aria-labelledby="main-heading">
+            <div class="ripple-option">
+                <span class="ripple-number" aria-hidden="true">
